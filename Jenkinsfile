@@ -14,7 +14,7 @@ pipeline {
 
 
 
-     stages {
+    stages {
         stage('test') {
             steps {
                 echo 'Hello World'
@@ -24,7 +24,7 @@ pipeline {
 
 
 
-     stages {
+    stages {
         stage('deploy') {
             steps {
                 echo 'Hello World'
