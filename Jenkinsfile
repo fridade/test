@@ -48,6 +48,17 @@ pipeline {
             }
         }
 
+        stage('end') {
+            when {
+                expression {
+                    env.ENVIRONMENT == 'DEV' && env.REGISTRY == 'ECR' // this 2 cdt should match for the end stage to be succes
+                }
+            }
+            steps {
+                echo 'Hello World'
+            }
+        }
+
 
 
 
