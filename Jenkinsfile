@@ -38,35 +38,14 @@ pipeline {
 
 
         stage('deploy') {
+            when {
+                expression {
+                    env.ENVIRONMENT != DEV
+                }
+            }
             steps {
                 echo 'Hello World'
             }
         }
 
 
-
-
-
-
-
-
-
-
-    }
-
-
-
-
-
-    
-    
-
-
-
-
-
-
-
-
-
-}
