@@ -14,7 +14,7 @@ pipeline {
         stage('build') {
         when {
             expression {
-            env.app == 'odilia'    
+            env.app == 'odilia'    //this will run if the cdt fits app equal to odilia
 
             }
         }
@@ -28,7 +28,7 @@ pipeline {
         stage('test') {
             when {
                 expression {
-                    env.REGISTRY == 'NEXUS'
+                    env.REGISTRY == 'NEXUS' || env.REGISTRY == 'ECR' // this will work if the cdt fits  nexus or ecr
                 }
             }
             steps {
@@ -40,7 +40,7 @@ pipeline {
         stage('deploy') {
             when {
                 expression {
-                    env.ENVIRONMENT != 'DEV'
+                    env.ENVIRONMENT != 'DEV' // this will run if the cdt fits enironment not equal to dev
                 }
             }
             steps {
