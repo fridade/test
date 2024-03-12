@@ -4,12 +4,8 @@ pipeline {
     parameters {
      choice choices: ['DEV', 'QA', 'P PROD', 'PROD'], description: 'choose your env', name: 'ENVIRONMENT'
      string defaultValue: 'canary', description: 'choose the appropriate app', name: 'app'
+     choice choices: ['ECR', 'DOKERHUB', 'NEXUS'], description: 'select the registry where you want to push your image', name: 'REGISTRY'
     }
-              {
-    choice choices: ['ECR', 'DOKERHUB', 'NEXUS'], description: 'select the registry where you want to push your image', name: 'REGISTRY'
-    }
-
-
 
 
 
