@@ -40,7 +40,7 @@ pipeline {
         stage('deploy') {
             when {
                 expression {
-                    env.ENVIRONMENT != DEV
+                    env.ENVIRONMENT != 'DEV'
                 }
             }
             steps {
